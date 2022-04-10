@@ -1,14 +1,6 @@
 from aws_main import Core
-Core("q1","job_q2")
-"""
-class test():
-    def __init__(self,text):
-        self.text = text
-    def core(self):
-        print(self.text)
-        self.returned_string = self.text+"0"
-        return self.returned_string
+Core("q1","job_q1")
+Core("q2","job_q2")
+Core("q3","job_q3")
+Core("q4","job_q4")
 
-text_object = test("hello")
-print(text_object.core())
-"""

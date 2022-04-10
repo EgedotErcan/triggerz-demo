@@ -1,5 +1,6 @@
 from aws_transcribe import Transcribe
 from aws_comprehend import Comprehend
+from aws_assign_pdf import Assign
 import pandas as pd
 
 class Core():
@@ -7,8 +8,9 @@ class Core():
         self.file_name = file_name
         self.job_name = job_name
         self.transcribe_object = Transcribe(file_url=self.file_name,job_name=self.job_name)
-        self.df = pd.DataFrame(Comprehend(self.transcribe_object.transcribe_file()).comprehend_file()['ResultList'][0]['KeyPhrases'])
-        print(self.df.to_string())
+        self.assign_object = Assign(self.file_name,Comprehend(self.transcribe_object.transcribe_file()).comprehend_file()['ResultList'][0]['KeyPhrases'])
+        self.assign_object.assign_pdf()
+            
         
 
 
