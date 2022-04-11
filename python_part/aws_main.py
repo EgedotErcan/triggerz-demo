@@ -1,7 +1,6 @@
 from aws_transcribe import Transcribe
 from aws_comprehend import Comprehend
 from aws_assign_pdf import Assign
-import pandas as pd
 
 class Core():
     def __init__(self,file_name,job_name):
