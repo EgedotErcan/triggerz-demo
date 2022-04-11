@@ -31,8 +31,12 @@ class Transcribe():
                     response = urllib.request.urlopen(job['TranscriptionJob']['Transcript']['TranscriptFileUri'])
                     data = json.loads(response.read())
                     text = data['results']['transcripts'][0]['transcript']
+                    self.delete_transcribe_object()
                     return text
                 break
             else:
                 print(f"Waiting for {self.job_name}. Current status is {job_status}.")
             time.sleep(10)
+        
+    def delete_transcribe_object(self):
+        self.transcribe_client.delete_transcription_job(TranscriptionJobName=f"{self.job_name}")

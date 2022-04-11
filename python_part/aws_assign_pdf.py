@@ -10,8 +10,8 @@ class Assign():
     def __init__(self,file_name,keywords):
         self.file_name = file_name
         self.keywords = keywords
-        self.target_file = "Questionary_original.pdf"
-        self.original_file = "Questionary_original.pdf"  
+        self.target_file = "python_part/2022_CG_Triggered_SF.pdf"
+        self.original_file = "python_part/2022_CG_Triggered_SF.pdf"  
         self.data_preprocessing()
 
     def assign_pdf(self):
@@ -62,12 +62,19 @@ class Assign():
                 my_canvas.drawText(textobject)
             case "q7":
                 textobject = my_canvas.beginText()
-                textobject.setTextOrigin(130,182)
+                textobject.setTextOrigin(130,241)
                 textobject.setFont("Helvetica", 8)
                 wrapped_text = "\n".join(textwrap.wrap(self.keywords,110))
                 textobject.textLines(wrapped_text)
                 my_canvas.drawText(textobject)
             case "q8":
+                textobject = my_canvas.beginText()
+                textobject.setTextOrigin(130,182)
+                textobject.setFont("Helvetica", 8)
+                wrapped_text = "\n".join(textwrap.wrap(self.keywords,110))
+                textobject.textLines(wrapped_text)
+                my_canvas.drawText(textobject)
+            case "q9":
                 textobject = my_canvas.beginText()
                 textobject.setTextOrigin(130,137)
                 textobject.setFont("Helvetica", 8)
@@ -87,6 +94,7 @@ class Assign():
         outputStream = open(self.original_file, "ab")
         output.write(outputStream)
         outputStream.close()
+        return self.keywords
 
     def data_preprocessing(self):
         string_keywords_array = pd.DataFrame(self.keywords)["Text"].to_numpy(dtype="str")
