@@ -1,6 +1,6 @@
-from aws_transcribe import Transcribe
-from aws_comprehend import Comprehend
-from aws_assign_pdf import Assign
+from aws_modules.aws_assign_pdf import Assign
+from aws_modules.aws_comprehend import Comprehend
+from aws_modules.aws_transcribe import Transcribe
 
 class Core():
     def __init__(self,file_name):

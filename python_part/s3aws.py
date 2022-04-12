@@ -17,11 +17,11 @@ s3.upload_file('./transcription.txt','myexpertunity','transcription.txt',ExtraAr
 
 ## Bu dosya formatlarını yerel pcye s3'ten çekip geri gönderdik 
 response1 = s3.get_object(Bucket="myexpertunity",Key="transcription.txt")
-data1 = response1['Body'].read() # txt
+datas1 = response1['Body'].read() # txt
 
 ## Bu dosya formatlarını yerel pcye s3'ten çekip geri gönderdik 
 s3.download_file('myexpertunity','q1.mp3',os.path.join(os.getcwd(),'testq1.mp3'))# mp3
-print(data1)
+print(datas1)
 
 
 
