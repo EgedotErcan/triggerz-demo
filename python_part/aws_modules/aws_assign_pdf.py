@@ -3,15 +3,14 @@ import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 import pandas as pd
-import numpy as np
 import textwrap
 
 class Assign():
     def __init__(self,file_name,keywords):
         self.file_name = file_name
         self.keywords = keywords
-        self.target_file = "python_part/2022_CG_Triggered_SF.pdf"
-        self.original_file = "python_part/2022_CG_Triggered_SF.pdf"  
+        self.target_file = "./2022_CG_Triggered_SF.pdf"
+        self.original_file = "./2022_CG_Triggered_SF.pdf"  
         self.data_preprocessing()
 
     def assign_pdf(self):
