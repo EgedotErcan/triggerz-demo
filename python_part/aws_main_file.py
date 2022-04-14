@@ -74,8 +74,8 @@ class Assign():
     def __init__(self,file_name,keywords):
         self.file_name = file_name
         self.keywords = keywords
-        self.target_file = "python_part/2022_CG_Triggered_SF.pdf"
-        self.original_file = "python_part/2022_CG_Triggered_SF.pdf"  
+        self.target_file = "python_part/2022_CG_Triggered_SF_processed.pdf"
+        self.original_file = "python_part/2022_CG_Triggered_SF_template.pdf"  
         self.data_preprocessing()
 
     def assign_pdf(self):
@@ -155,7 +155,7 @@ class Assign():
         page = existing_pdf.getPage(0)
         page.mergePage(retention_pdf.getPage(0))
         output.addPage(page)
-        outputStream = open(self.original_file, "ab")
+        outputStream = open(self.target_file, "ab")
         output.write(outputStream)
         outputStream.close()
         return self.keywords
