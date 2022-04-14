@@ -20,7 +20,7 @@ py modules
 
 ```bash
 pip install -r requirements.txt
-python aws_main_file.py
+python test.py
 ```
 
 ### What's inside the project ?
