@@ -7,14 +7,20 @@
 * Ertuğrul Tunç - Transcribe Module
 * Ege Ercan - Comprehend Module , Assign PDF Module , OOP 
 
-# Modules 
+# Requirements
+
+Python 3.10 or newer 
+
+py modules
 - boto3 
 - pandas
 - pypdf2
 - reportlab
-> ## Usage
-```python
-pip install ##all of modules
+## Usage
+
+```bash
+pip install -r requirements.txt
+python aws_main_file.py
 ```
 
 ### What's inside the project ?
