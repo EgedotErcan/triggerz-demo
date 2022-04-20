@@ -2,16 +2,20 @@ import boto3
 import time
 import urllib
 import json
+import os
 
 class Transcribe():
 
     def __init__(self,file_url,job_name):
+        REGION_NAME = os.getenv("REGION_NAME")
+        AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+        AWS_SECRET_ACCES_KEY = os.getenv("AWS_SECRET_ACCES_KEY")
         self.file_url = file_url
         self.job_name = job_name
         self.transcribe_client = boto3.client('transcribe',
-                                aws_access_key_id="AKIAUQUQBNZUWY4J4ZJR",
-                                aws_secret_access_key="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",
-                                region_name='us-east-1')
+                                region_name=f"{REGION_NAME}",
+                                aws_access_key_id=f"{AWS_ACCESS_KEY_ID}",
+                                aws_secret_access_key=f"{AWS_SECRET_ACCES_KEY}")
 
     def transcribe_file(self):
         self.transcribe_client.start_transcription_job(

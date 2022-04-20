@@ -1,13 +1,17 @@
 import boto3
+import os
 
 class Comprehend():
     
     def __init__(self,string_data):
+        REGION_NAME = os.getenv("REGION_NAME")
+        AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+        AWS_SECRET_ACCES_KEY = os.getenv("AWS_SECRET_ACCES_KEY")
         self.data = [string_data]
         self.comprehend = boto3.client('comprehend', 
-                        region_name = 'us-east-1',
-                        aws_access_key_id = "AKIAUQUQBNZUWY4J4ZJR",
-                        aws_secret_access_key = "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")
+                        region_name=f"{REGION_NAME}",
+                        aws_access_key_id=f"{AWS_ACCESS_KEY_ID}",
+                        aws_secret_access_key=f"{AWS_SECRET_ACCES_KEY}")
     
     def comprehend_file(self):
         data_output = self.comprehend.batch_detect_key_phrases(TextList=self.data, LanguageCode='en')
