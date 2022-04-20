@@ -3,10 +3,11 @@ import time
 import urllib
 import json
 import os
-
+from dotenv import load_dotenv
 class Transcribe():
 
     def __init__(self,file_url,job_name):
+        load_dotenv()
         REGION_NAME = os.getenv("REGION_NAME")
         AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
         AWS_SECRET_ACCES_KEY = os.getenv("AWS_SECRET_ACCES_KEY")

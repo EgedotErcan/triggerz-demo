@@ -5,6 +5,7 @@ from reportlab.lib.pagesizes import letter
 import pandas as pd
 import textwrap
 
+
 class Assign():
     def __init__(self,file_name,keywords):
         self.file_name = file_name

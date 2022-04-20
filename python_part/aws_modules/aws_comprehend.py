@@ -1,9 +1,11 @@
 import boto3
 import os
+from dotenv import load_dotenv
 
 class Comprehend():
     
     def __init__(self,string_data):
+        load_dotenv()
         REGION_NAME = os.getenv("REGION_NAME")
         AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
         AWS_SECRET_ACCES_KEY = os.getenv("AWS_SECRET_ACCES_KEY")

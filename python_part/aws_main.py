@@ -3,9 +3,11 @@ from aws_modules.aws_comprehend import Comprehend
 from aws_modules.aws_transcribe import Transcribe
 import boto3
 import os
+from dotenv import load_dotenv
 
 class Core():
     def __init__(self,file_name):
+        load_dotenv()
         REGION_NAME = os.getenv("REGION_NAME")
         AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
         AWS_SECRET_ACCES_KEY = os.getenv("AWS_SECRET_ACCES_KEY")
