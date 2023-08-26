@@ -1,4 +1,4 @@
-# Trigger-Project
+# triggerz-demo
 >### NON-COMMERICAL USE PROJECT!
 # Developers
 ![Screenshot](Collabrators.png)
